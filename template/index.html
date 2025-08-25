@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Askify</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white rounded-2xl shadow-xl p-8 max-w-lg w-full">
+    <h1 class="text-3xl font-bold text-gray-800 text-center mb-4">
+      Generate Question and Answer 
+    </h1>
+    <p class="text-gray-600 text-center mb-6">
+      Upload a PDF file and generate relevant question and answers in CSV format.
+    </p>
+
+    <form id="uploadForm" class="flex flex-col space-y-4">
+      <input type="file" id="pdfFile" name="pdf_file" accept="application/pdf" class="block w-full file:py-3 file:px-6 file:border file:border-gray-300 file:rounded-lg file:bg-indigo-500 file:text-white hover:file:bg-indigo-600 cursor-pointer">
+      
+      <input type="text" id="filename" name="filename" placeholder="Enter filename (e.g. doc.pdf)" class="border rounded-lg px-3 py-2 w-full" required>
+      
+      <button type="submit" id="convertBtn" class="w-full py-3 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition">
+        Upload & Analyze
+      </button>
+    </form>
+
+    <p id="statusMsg" class="text-center text-gray-600 mt-4 hidden">Processing...</p>
+    <a id="downloadLink" href="#" class="hidden mt-4 block text-center py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">
+      Download CSV
+    </a>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
